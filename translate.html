@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+	var val = $("#input").val();
+	let data = {"text":"Team,\nThank you for joining the Q3 I/SA Employee Townhall and making it truly engaging and special. It was great to meet many of you and those who couldn’t join us live can watch the replay.\n\nTalking of our strategic priorities, we grew stronger and stayed essential to our clients and ecosystem. We had a great 1H and I am sure you will continue the momentum across 2H and beyond.\n\nThe Q3 Townhall was truly a celebration of people. It was interesting to see Lingraju Sawkar, GM, GTS, IBM India, interact with Shreya Saha, Application Developer, GBS CIC, as they hailed the spirit of an IBMer in ‘Millennial Meets the Master’ segment.\n\nWe also called out some key recognitions and reiterated our pledge to stay inclusive. What made the Townhall really special was the ‘Masterminds’ session, which brought to fore the impact of GoodTech and innovation championed by IBM. We were joined by 7 bright students who are already putting GoodTech in action with the guidance of IBM Mentors. The three winning teams of the IBM AI Hackathon Challenge organised in collaboration with CBSE showcased their AI prototypes and a budding space scientist in the making from STEM for Girls Program.\n\nTheir projects, enthusiasm, creativity and zeal were truly inspiring. It left all of us with a feeling of pride and gratification and a stronger resolve to continue driving purpose-driven growth for us as individuals, for IBM and our ecosystem at large.\n\nStay safe. Stay inspired.\n\n\nRegards,  \nSandip\n\n \n\n\n","target":"ja"}
+
+	$.ajax({
+		type: 'PUT',
+		url: 'http://2e686222e123.ngrok.io/api/gettranslate',
+		data: JSON.stringify(data), // access in body
+	}).done(function (data) {
+		console.log('SUCCESS',data);
+		$("#div1").html(data);
+	}).fail(function (msg) {
+		console.log('FAIL', msg);
+	}).always(function (msg) {
+		console.log('ALWAYS', msg);
+	});
+	
+	
+  });
+});
+</script>
+</head>
+<body>
+
+<input type="text" value="How are you, what are you doing?" id="input"/>
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+
+<button>Get External Content</button>
+
+</body>
+</html>

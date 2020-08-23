@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+	  
+		var children = $(".mail-read-view").contents();
+		for(var i of children) {
+			if(i.innerText) {
+				parseDiv($(i));
+			}
+		}
+		
+		function parseDiv(content) {
+			var contentData = $(content).children();
+			if(contentData.length > 0) {
+				for(var c of contentData) {
+					if(c.innerText) {
+						console.log("######");
+						console.log(c);
+						console.log(c.tagName);
+						console.log(c.innerText);
+						console.log($(c).html());
+						console.log($(c).children().length);
+						console.log("######");
+						if($(c).children().length > 0) {
+							parseDiv($(c));
+							$(c).html($(c).html().replace(c.innerText, c.innerText+" Edited"));
+						} else {
+							$(c).text($(c).text()+" Edited");
+						}
+						
+					}
+				}
+			}
+		}
+      });
+    </script>
+  </head>
+  <body>
+    <div class="mail-read-view">
+      <div class="mail-read-view-header">
+        <div class="priority status-icon" title="High priority">
+          <svg
+            class="exclam-point"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15 19v5h-4.9l-.1-5h5zm-1.5-2.1h-1.9L10 6V0h5v6l-1.5 10.9z"
+            ></path>
+          </svg>
+        </div>
+        <div class="return-receipt-icon status-icon" title="Return receipt">
+          Return receipt<svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M12 2v11H3V2h9m1-1H2v13h11V1zM2 0h1v1H2zM4 0h1v1H4zM6 0h1v1H6zM8 0h1v1H8zM10 0h1v1h-1zM12 0h1v1h-1zM1 1h1v1H1zM1 3h1v1H1zM1 5h1v1H1zM1 7h1v1H1zM1 9h1v1H1zM1 11h1v1H1zM1 13h1v1H1zM2 14h1v1H2zM4 14h1v1H4zM6 14h1v1H6zM8 14h1v1H8zM10 14h1v1h-1zM12 14h1v1h-1zM13 13h1v1h-1zM13 11h1v1h-1zM13 9h1v1h-1zM13 7h1v1h-1zM13 5h1v1h-1zM13 3h1v1h-1zM13 1h1v1h-1z"
+            ></path>
+            <path d="M7 3h8v1H7zM7 5h8v1H7zM7 7h8v1H7z"></path>
+          </svg>
+        </div>
+        <div
+          class="pim-mailread-subject"
+          title="3Q ISA Employee Townhall | Watch the Replay"
+          data-dojo-attach-point="mailreadSubjectTitle"
+        >
+          <h2
+            data-dojo-type="dwa.widget.label"
+            id="pimSubject_CONTENT-PP-4"
+            data-dojo-props=' value: this.model.subject || "(no subject)",
+	                      formatter: dwa.common.itemFormatter'
+            data-dojo-attach-point="subjectTitleLabel"
+            class="idw-label"
+            widgetid="pimSubject_CONTENT-PP-4"
+          >
+            3Q ISA Employee Townhall | Watch the Replay
+          </h2>
+        </div>
+        <span
+          class="pimMailTimestamp pim-mailread-sentdate socpimDisplayShort"
+          id="socmail_sequoia_widgets_ToggleDate_7"
+          widgetid="socmail_sequoia_widgets_ToggleDate_7"
+        >
+          <span class="pimMailShort" data-dojo-attach-point="shortFormatNode"
+            >Yesterday, 3:16 PM</span
+          >
+          <span class="pimMailLong" data-dojo-attach-point="longFormatNode"
+            >Mon, Aug 17 3:16 PM</span
+          >
+        </span>
+        <div class="pim-blank-line"></div>
+        <div
+          tabindex="0"
+          class="socpimMailingList pim-mailread-recipient socpimShowLess socpimEmptyCcList socpimEmptyBccList"
+          id="socmail_sequoia_widgets_NameList_7"
+          widgetid="socmail_sequoia_widgets_NameList_7"
+        >
+          <div
+            class="socpimCombinedMailingListContainer"
+            data-dojo-attach-point="combinedMailingListContainer"
+            role="application"
+            aria-label="Recipient List"
+          >
+            <span
+              class="socpimMailSender"
+              data-dojo-attach-point="mailSenderLessNode"
+              ><span
+                socpimnameemail="indiargm@in.ibm.com"
+                class="socpimNameBtn"
+                aria-label="IBM India South Asia"
+                title="View business card"
+                tabindex="-1"
+                role="button"
+                >IBM India South Asia</span
+              ></span
+            >
+            <span
+              class="socpimToPerposition"
+              data-dojo-attach-point="shortToNode"
+              >to</span
+            >
+            <span
+              class="socpimCombinedList"
+              data-dojo-attach-point="combinedListNode"
+              >me</span
+            >
+          </div>
+          <div
+            class="socpimMailingListContainer"
+            data-dojo-attach-point="mailingListContainer"
+            role="application"
+            aria-label="Detailed Recipient List"
+          >
+            <span class="socpimMailSenderLabel">From:</span>
+            <span
+              class="socpimMailSender"
+              data-dojo-attach-point="mailSenderMoreNode"
+              ><span
+                socpimnameemail="indiargm@in.ibm.com"
+                class="socpimNameBtn"
+                aria-label="IBM India South Asia <indiargm@in.ibm.com>"
+                title="View business card"
+                tabindex="-1"
+                role="button"
+                >IBM India South Asia &lt;indiargm@in.ibm.com&gt;</span
+              ></span
+            >
+            <span class="socpimToLabel">To:</span>
+            <span class="socpimToList" data-dojo-attach-point="toListNode"
+              >me</span
+            >
+            <span class="socpimCcLabel">Cc:</span>
+            <span
+              class="socpimCcList"
+              data-dojo-attach-point="ccListNode"
+            ></span>
+            <span class="socpimBccLabel">Bcc:</span>
+            <span
+              class="socpimBccList"
+              data-dojo-attach-point="bccListNode"
+            ></span>
+          </div>
+        </div>
+        <div class="pim-mailread-sentby">
+          <span class="pimSentByLabel">Sent by:</span>
+          <span
+            class="pimSentBy"
+            socpimnameemail="indiargm@in.ibm.com"
+            data-dojo-attach-point="sentBy"
+            role="button"
+            tabindex="0"
+            shortname="IBM India South Asia"
+            longname="IBM India South Asia <indiargm@in.ibm.com>"
+            aria-label="IBM India South Asia"
+            title="View business card"
+            >IBM India South Asia</span
+          >
+        </div>
+        <div
+          role="group"
+          aria-label="Recipient details"
+          class="pim-show-moreless"
+          data-dojo-attach-point="showMoreLessNode"
+        >
+          <a
+            role="button"
+            class="pim-show-less-btn"
+            data-dojo-attach-point="showLessBtn"
+            data-dojo-attach-event="onclick: _showLess, keydown: _onShowLessKeyDown"
+            href="javascript:;"
+            >Show less</a
+          >
+          <a
+            role="button"
+            class="pim-show-more-btn"
+            data-dojo-attach-point="showMoreBtn"
+            data-dojo-attach-event="onclick: _showMore, keydown: _onShowMoreKeyDown"
+            href="javascript:;"
+            >Show more</a
+          >
+        </div>
+        <div class="pim-blank-line"></div>
+        <div
+          id="dijit__TemplatedMixin_19"
+          class="pim-mailread-repond-to"
+          widgetid="dijit__TemplatedMixin_19"
+        >
+          Please respond to indiargm@in.ibm.com
+        </div>
+
+        <div
+          id="socmail_widgets_SecurityInfoView_3"
+          class="pim-mailread-securityinfo"
+          widgetid="socmail_widgets_SecurityInfoView_3"
+        >
+          <div
+            class="lotusui30 pimSecurityInfo dijitDisplayNone"
+            data-dojo-type="dwa.widget.CollapsibleArea"
+            data-dojo-attach-point="_collapsibleNode"
+            data-dojo-props="valuesToHide: [false]"
+            id="dwa_widget_CollapsibleArea_6"
+            widgetid="dwa_widget_CollapsibleArea_6"
+          >
+            <div class="lotusChunk">
+              <span class="pimToccbcc">
+                <img
+                  class="encryptedIcon dijitHidden"
+                  src="https://mail.notes.na.collabserv.com/sequoia/dist/FfZmXdg2Pm3yJeTRc_ZBYGz9ftlaelwghilKJuabyQE/sequoia-dojo/dojo/resources/blank.gif"
+                  data-dojo-attach-point="encryptedIconNode"
+                />
+                <span
+                  class="encryptedText dijitHidden"
+                  data-dojo-attach-point="encryptedTextNode"
+                ></span>
+                <img
+                  class="dijitHidden"
+                  src="https://mail.notes.na.collabserv.com/sequoia/dist/FfZmXdg2Pm3yJeTRc_ZBYGz9ftlaelwghilKJuabyQE/sequoia-dojo/dojo/resources/blank.gif"
+                  data-dojo-attach-point="signedIconNode"
+                />
+                <span
+                  class="signedText dijitHidden"
+                  data-dojo-attach-point="signedTextNode"
+                ></span>
+                <span
+                  class="signed-tooltip"
+                  data-dojo-type="socmail/sequoia/widgets/Tooltip"
+                  data-dojo-props="refNode: this.signedIconNode"
+                  id="dijit__WidgetBase_3"
+                  widgetid="dijit__WidgetBase_3"
+                >
+                  <div>
+                    <span class="label">Signed by:</span
+                    ><span
+                      data-dojo-attach-point="signedTooltipByNode"
+                      class="field"
+                    ></span>
+                  </div>
+                  <div>
+                    <span class="label">Where:</span
+                    ><span
+                      data-dojo-attach-point="signedTooltipWhereNode"
+                      class="field"
+                    ></span>
+                  </div>
+                  <div>
+                    <span class="label">When:</span
+                    ><span
+                      data-dojo-attach-point="signedTooltipWhenNode"
+                      class="field"
+                    ></span>
+                  </div>
+                </span>
+                <span
+                  class="signedEncryptedMsg"
+                  data-dojo-attach-point="messageNode"
+                ></span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="attached-list"
+          tabindex="0"
+          role="application"
+          aria-describedby="dijit__WidgetsInTemplateMixin_9_a11y_attached_list_desc"
+          id="dijit__WidgetsInTemplateMixin_9"
+          widgetid="dijit__WidgetsInTemplateMixin_9"
+          aria-label="Attached Files"
+        >
+          <div class="attachment-list" data-dojo-attach-point="_list"></div>
+          <div class="list-actions" data-dojo-attach-point="_actions">
+            <a
+              class="action-download-all"
+              href="javascript: void 0;"
+              data-dojo-attach-point="_downloadAllBtn"
+              data-dojo-attach-event="click: _onDownloadAll"
+              tabindex="-1"
+              >Download All</a
+            >
+            <a
+              class="downloading"
+              href="javascript: void 0;"
+              data-dojo-attach-point="_loadingLabel"
+              tabindex="-1"
+              disabled=""
+              >Downloading...</a
+            >
+            <a
+              class="show-more"
+              href="javascript: void 0;"
+              data-dojo-attach-point="_moreLink"
+              data-dojo-attach-event="click: _expandList"
+              tabindex="-1"
+              >&nbsp;</a
+            >
+            <a
+              class="show-less"
+              href="javascript: void 0;"
+              data-dojo-attach-point="_lessLink"
+              data-dojo-attach-event="click: _collapseList"
+              tabindex="-1"
+              >Show less</a
+            >
+            <div class="spacer"></div>
+            <a
+              class="action-add"
+              href="javascript: void 0;"
+              data-dojo-attach-point="_actionAdd"
+              data-dojo-attach-event="click: _onAddAll"
+              tabindex="-1"
+              >Include all</a
+            >
+            <a
+              class="action-remove"
+              href="javascript: void 0;"
+              data-dojo-attach-point="_actionRemove"
+              data-dojo-attach-event="click: _onRemoveAll"
+              tabindex="-1"
+              >Exclude all</a
+            >
+          </div>
+          <span
+            id="dijit__WidgetsInTemplateMixin_9_a11y_attached_list_desc"
+            class="a11y-descriptor"
+            >Press ENTER to activate</span
+          >
+        </div>
+
+        <div
+          class="open-in-notes pim-mailread-open-in-notes"
+          id="dijit__WidgetsInTemplateMixin_10"
+          widgetid="dijit__WidgetsInTemplateMixin_10"
+        >
+          <div class="pim-body">
+            <div class="type-indicator">
+              <svg
+                class="notify-icons"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <g class="notify-confirmation">
+                  <path
+                    display="none"
+                    d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M11.2,17.2l-1.7-1l0,0l-3.5-2l1-1.7l3.5,2
+				l5-8.6l1.7,1L11.2,17.2z"
+                  ></path>
+                  <polygon
+                    points="10.5,14.4 6.9,12.4 5.9,14.1 9.5,16.2 9.4,16.2 11.2,17.2 17.2,6.8 15.4,5.8 	"
+                  ></polygon>
+                  <path
+                    d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12S5.9,1,12,1
+				s11,4.9,11,11S18.1,23,12,23z"
+                  ></path>
+                </g>
+                <g class="notify-alert">
+                  <path
+                    display="none"
+                    d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M12,19c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2
+				S13.1,19,12,19z M14,13h-4V5h4V13z"
+                  ></path>
+                  <path
+                    d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12S5.9,1,12,1
+				s11,4.9,11,11S18.1,23,12,23z"
+                  ></path>
+                  <rect x="10" y="5" width="4" height="8"></rect>
+                  <circle cx="12" cy="17" r="2"></circle>
+                </g>
+                <!-- leave notify-information for potential future use -->
+                <g class="notify-information">
+                  <path
+                    display="none"
+                    d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M12.1,4.3c1,0,1.9,0.9,1.9,1.9
+				s-0.9,1.9-1.9,1.9s-1.9-0.9-1.9-1.9S11.1,4.3,12.1,4.3z M16,19H9v-2h2v-5H9v-2h5v7h2V19z"
+                  ></path>
+                  <path
+                    d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12
+				S5.9,1,12,1s11,4.9,11,11S18.1,23,12,23z"
+                  ></path>
+                  <polygon
+                    points="14,10 9,10 9,12 11,12 11,17 9,17 9,19 16,19 16,17 14,17 	"
+                  ></polygon>
+                  <path
+                    d="M12.1,8.1c1,0,1.9-0.9,1.9-1.9s-0.9-1.9-1.9-1.9s-1.9,0.9-1.9,1.9S11.1,8.1,12.1,8.1z"
+                  ></path>
+                </g>
+                <g class="notify-error">
+                  <path
+                    display="none"
+                    d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M15.3,17.1l-3.5-3.5l-3.6,3.6l-1.4-1.4
+				l3.6-3.6L6.9,8.6l1.4-1.4l3.5,3.5l3.4-3.4l1.4,1.4l-3.4,3.4l3.5,3.5L15.3,17.1z"
+                  ></path>
+                  <polygon
+                    points="16.7,8.7 15.2,7.3 11.8,10.7 8.3,7.2 6.9,8.6 10.4,12.1 6.8,15.8 8.2,17.2 11.8,13.6 15.3,17.1 
+				16.8,15.7 13.2,12.1 	"
+                  ></polygon>
+                  <path
+                    d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12
+				S5.9,1,12,1s11,4.9,11,11S18.1,23,12,23z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="pim-chunk">
+              <span class="pim-message" id="openButtonDescription"
+                >This message contains content that may need to be viewed using
+                IBM Notes or IBM Client Application Access.
+                <span class="a11y-offscreen-warning"
+                  >Warning: This leads to a page that might contain inaccessible
+                  content</span
+                >
+              </span>
+            </div>
+            <button
+              id="dijit__WidgetsInTemplateMixin_10_pimOpenButton"
+              class="pim-open-button"
+              data-dojo-attach-point="openButton"
+              data-dojo-attach-event="onClick: _onOpenButtonClick"
+              aria-describedby="openButtonDescription"
+            >
+              Open
+            </button>
+            <button
+              class="pim-close-button"
+              data-dojo-attach-point="closeIcon"
+              data-dojo-attach-event="onClick: _onCloseIconClick"
+              title="Close"
+            >
+              <svg
+                class="close-nocircle"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  class="close-nocircle-x"
+                  d="M13 3.8l-.8-.8L8 7.2 3.8 3l-.8.8L7.2 8 3 12.2l.8.8L8 8.8l4.2 4.2.8-.8L8.8 8z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="dijit__WidgetsInTemplateMixin_11"
+          class="pim-mailread-image-blocker"
+          widgetid="dijit__WidgetsInTemplateMixin_11"
+        >
+          <div
+            class="pimImageBlocker"
+            data-dojo-type="dwa.widget.CollapsibleArea"
+            data-dojo-attach-point="imageBlockerArea"
+            data-dojo-props="value: false, valuesToHide: [false]"
+            id="dwa_widget_CollapsibleArea_7"
+            widgetid="dwa_widget_CollapsibleArea_7"
+          >
+            <div class="pimBody">
+              <div class="type-indicator">
+                <svg
+                  class="notify-icons"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g class="notify-confirmation">
+                    <path
+                      display="none"
+                      d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M11.2,17.2l-1.7-1l0,0l-3.5-2l1-1.7l3.5,2
+				l5-8.6l1.7,1L11.2,17.2z"
+                    ></path>
+                    <polygon
+                      points="10.5,14.4 6.9,12.4 5.9,14.1 9.5,16.2 9.4,16.2 11.2,17.2 17.2,6.8 15.4,5.8 	"
+                    ></polygon>
+                    <path
+                      d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12S5.9,1,12,1
+				s11,4.9,11,11S18.1,23,12,23z"
+                    ></path>
+                  </g>
+                  <g class="notify-alert">
+                    <path
+                      display="none"
+                      d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M12,19c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2
+				S13.1,19,12,19z M14,13h-4V5h4V13z"
+                    ></path>
+                    <path
+                      d="M12,0C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12S5.9,1,12,1
+				s11,4.9,11,11S18.1,23,12,23z"
+                    ></path>
+                    <rect x="10" y="5" width="4" height="8"></rect>
+                    <circle cx="12" cy="17" r="2"></circle>
+                  </g>
+                  <!-- leave notify-information for potential future use -->
+                  <g class="notify-information">
+                    <path
+                      display="none"
+                      d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M12.1,4.3c1,0,1.9,0.9,1.9,1.9
+				s-0.9,1.9-1.9,1.9s-1.9-0.9-1.9-1.9S11.1,4.3,12.1,4.3z M16,19H9v-2h2v-5H9v-2h5v7h2V19z"
+                    ></path>
+                    <path
+                      d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12
+				S5.9,1,12,1s11,4.9,11,11S18.1,23,12,23z"
+                    ></path>
+                    <polygon
+                      points="14,10 9,10 9,12 11,12 11,17 9,17 9,19 16,19 16,17 14,17 	"
+                    ></polygon>
+                    <path
+                      d="M12.1,8.1c1,0,1.9-0.9,1.9-1.9s-0.9-1.9-1.9-1.9s-1.9,0.9-1.9,1.9S11.1,8.1,12.1,8.1z"
+                    ></path>
+                  </g>
+                  <g class="notify-error">
+                    <path
+                      display="none"
+                      d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M15.3,17.1l-3.5-3.5l-3.6,3.6l-1.4-1.4
+				l3.6-3.6L6.9,8.6l1.4-1.4l3.5,3.5l3.4-3.4l1.4,1.4l-3.4,3.4l3.5,3.5L15.3,17.1z"
+                    ></path>
+                    <polygon
+                      points="16.7,8.7 15.2,7.3 11.8,10.7 8.3,7.2 6.9,8.6 10.4,12.1 6.8,15.8 8.2,17.2 11.8,13.6 15.3,17.1 
+				16.8,15.7 13.2,12.1 	"
+                    ></polygon>
+                    <path
+                      d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12s12-5.4,12-12C24,5.4,18.6,0,12,0z M12,23C5.9,23,1,18.1,1,12
+				S5.9,1,12,1s11,4.9,11,11S18.1,23,12,23z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="pimChunk">
+                <span class="pimMessage1">Security:</span>
+                <span
+                  class="pimMessage2"
+                  id="dijit__WidgetsInTemplateMixin_11_securityMsg"
+                  >Some images were prevented from loading.
+                </span>
+              </div>
+              <div class="pimButton">
+                <button
+                  id="dijit__WidgetsInTemplateMixin_11_pimShowImages"
+                  class="pimShowImages"
+                  aria-describedby="dijit__WidgetsInTemplateMixin_11_securityMsg"
+                  data-dojo-type="dwa.widget.StatefulButton"
+                  data-dojo-attach-point="showImageButton"
+                  data-dojo-attach-event="onClick: _onShowImageButtonClick, keydown: _onShowImageButtonKeyDown"
+                  data-dojo-props="next: {'false': true}"
+                  widgetid="dijit__WidgetsInTemplateMixin_11_pimShowImages"
+                >
+                  Show Images
+                </button>
+              </div>
+              <button
+                class="pimCloseIcon"
+                data-dojo-attach-point="closeIcon"
+                data-dojo-attach-event="onClick: _onCloseIconClick, keydown: _onCloseIconKeyDown"
+                title="Close"
+              >
+                Close<svg
+                  class="close-nocircle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                  enable-background="new 0 0 32 32"
+                  xml:space="preserve"
+                >
+                  <polygon
+                    class="close-nocircle-x"
+                    points="28.8,4.7 27.3,3.2 16,14.5 4.7,3.2 3.2,4.7 14.5,16 3.2,27.3 4.7,28.8 16,17.5 27.3,28.8 28.8,27.3 
+		17.5,16 "
+                  ></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="pim-mailread-loading" aria-hidden="true">
+          Loading messages...
+        </div>
+      </div>
+      <div
+        class="idw-label pim-mailread-mailcontent"
+        data-dojo-type="dwa.widget.label"
+        data-dojo-attach-point="bodyContent"
+        data-dojo-props="formatter: socmail.common.BodyHtmlFormatter,
+	                  constraints: {
+	                    inlineAttachments: this.model.inlineAttachments
+	                  },
+	                  rawHtml: true"
+        id="dwa_widget_label_3"
+        widgetid="dwa_widget_label_3"
+      >
+        <!--Notes ACF
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans" rel="stylesheet">-->
+
+        <center>
+          <font size="1" color="#000000" face="ARIAL"
+            >This message contains graphics. If you do not see the graphics,
+            <a
+              href="https://links.spop.ibm.com/servlet/MailView?ms=MTc3MTcyOTgS1&amp;r=NTcwODMyOTE5MzMwS0&amp;j=MTk0MTA3Mzg4MAS2&amp;mt=1&amp;rt=0"
+              target="_blank"
+              rel="noopener"
+              >click here to view</a
+            >.</font
+          >
+          <font face="ARIAL" color="#808080" size="2"><br /></font>
+        </center>
+        <table align="center" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td>
+                <table
+                  align="center"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="font-size: 15px; border: solid 1px #262626;"
+                  valign="top"
+                  width="650px"
+                >
+                  <tbody>
+                    <tr style="background-color: #d0cfd2;">
+                      <td align="center" valign="top">
+                        <img
+                          alt="Sandip's Communique Own. Collaborate. Accelerate"
+                          s_org_src="http://contentz.spop.ibm.com/ra/2020/29008/08/17717298/images_header.jpg"
+                          width="650"
+                        />
+                      </td>
+                    </tr>
+                    <tr style="height: 4px;">
+                      <td
+                        style="
+                          background-color: #d0cfd2;
+                          height: 4px;
+                          font-size: 2px;
+                        "
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">
+                        <!---- Body text --->
+                        <table
+                          align="center"
+                          style="
+                            width: 94%;
+                            margin-top: 5px;
+                            margin-top: 5px;
+                            padding-left: 10px;
+                          "
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                align="left"
+                                style="padding-left: 7px; line-height: 25px;"
+                                valign="top"
+                              >
+                                Team,
+                                <p>
+                                  Thank you for joining the Q3 I/SA Employee
+                                  Townhall and making it truly engaging and
+                                  special. It was great to meet many of you and
+                                  those who couldn’t join us live can
+                                  <a
+                                    href="https://links.spop.ibm.com/ctt?ms=MTc3MTcyOTgS1&amp;kn=2&amp;r=NTcwODMyOTE5MzMwS0&amp;b=0&amp;j=MTk0MTA3Mzg4MAS2&amp;mt=1&amp;rt=0"
+                                    name="w3_ibm_com_w3publisher_isa_rgm_conn"
+                                    rel="noopener"
+                                    target="_blank"
+                                    ><strong>watch the replay.</strong></a
+                                  >
+                                </p>
+
+                                <p>
+                                  Talking of our strategic priorities, we grew
+                                  stronger and stayed essential to our clients
+                                  and ecosystem. We had a great 1H and I am sure
+                                  you will continue the momentum across 2H and
+                                  beyond.
+                                </p>
+
+                                <p>
+                                  The Q3 Townhall was truly a celebration of
+                                  people. It was interesting to see Lingraju
+                                  Sawkar, GM, GTS, IBM India, interact with
+                                  Shreya Saha, Application Developer, GBS CIC,
+                                  as they hailed the spirit of an IBMer in
+                                  ‘Millennial Meets the Master’ segment.
+                                </p>
+
+                                <p>
+                                  We also called out some key recognitions and
+                                  reiterated our pledge to stay inclusive. What
+                                  made the Townhall really special was the
+                                  ‘Masterminds’ session, which brought to fore
+                                  the impact of GoodTech and innovation
+                                  championed by IBM. We were joined by 7 bright
+                                  students who are already putting GoodTech in
+                                  action with the guidance of IBM Mentors. The
+                                  three winning teams of the IBM AI Hackathon
+                                  Challenge organised in collaboration with CBSE
+                                  showcased their AI prototypes and a budding
+                                  space scientist in the making from STEM for
+                                  Girls Program.
+                                </p>
+
+                                <p>
+                                  Their projects, enthusiasm, creativity and
+                                  zeal were truly inspiring. It left all of us
+                                  with a feeling of pride and gratification and
+                                  a stronger resolve to continue driving
+                                  purpose-driven growth for us as individuals,
+                                  for IBM and our ecosystem at large.
+                                </p>
+
+                                <p>Stay safe. Stay inspired.</p>
+
+                                <p style="text-align: center;">
+                                  <a
+                                    href="https://links.spop.ibm.com/ctt?ms=MTc3MTcyOTgS1&amp;kn=1&amp;r=NTcwODMyOTE5MzMwS0&amp;b=0&amp;j=MTk0MTA3Mzg4MAS2&amp;mt=1&amp;rt=0"
+                                    name="w3_ibm_com_w3publisher_isa_rgm_conn_2"
+                                    rel="noopener"
+                                    target="_blank"
+                                    tabindex="-1"
+                                    ><img
+                                      alt=""
+                                      s_org_src="http://contentz.spop.ibm.com/ra/2020/29008/08/17717298/images_Q2.jpg"
+                                      width="500"
+                                  /></a>
+                                </p>
+                                <br />
+                                Regards, &nbsp;<br />
+                                <strong>Sandip</strong>
+
+                                <p>&nbsp;</p>
+                              </td>
+                            </tr>
+                            <tr></tr>
+                          </tbody>
+                        </table>
+                        <!--- Body Text End --->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          background-color: #d7d7d7;
+                          height: 8px;
+                          font-size: 10px;
+                          padding: 1px 3px 1px 3px;
+                          text-align: right;
+                        "
+                      >
+                        *For internal distribution only. *IBM Confidential
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          background-color: #650f57;
+                          height: 8px;
+                          font-size: 9px;
+                        "
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <img
+          s_org_src="https://links.spop.ibm.com/open/log/17717298/NTcwODMyOTE5MzMwS0/0/MTk0MTA3Mzg4MAS2/1/0"
+          style="display: none;"
+        />
+      </div>
+    </div>
+  </body>
+</html>
